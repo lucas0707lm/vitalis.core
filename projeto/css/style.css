@@ -1,0 +1,1013 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ========================================
+   1. VARIÁVEIS E TEMAS
+======================================== */
+
+:root {
+    --bg: #f4f7f5;
+    --surface: #fff;
+    --surface-2: #f7faf8;
+    --text: #17231d;
+    --muted: #68766e;
+    --line: #e2eae5;
+
+    --primary: #16845a;
+    --primary-dark: #106b48;
+    --primary-soft: #e5f5ed;
+
+    --danger: #c34d4d;
+    --warning: #a66a17;
+
+    --shadow: 0 8px 28px rgba(25, 55, 39, .06);
+    --radius: 18px;
+}
+
+[data-theme="dark"] {
+    --bg: #111a16;
+    --surface: #1b2821;
+    --surface-2: #223128;
+    --text: #edf5ef;
+    --muted: #a7b6ac;
+    --line: #34463a;
+
+    --primary: #43bd83;
+    --primary-dark: #2fa66f;
+    --primary-soft: #203d2e;
+
+    --danger: #ff8585;
+    --warning: #edbd68;
+
+    --shadow: 0 8px 28px rgba(0, 0, 0, .18);
+}
+
+
+/* ========================================
+   2. RESET E CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', Arial, sans-serif;
+    line-height: 1.5;
+    transition: background .2s, color .2s;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+
+/* ========================================
+   3. BARRA SUPERIOR E IDENTIDADE VISUAL
+======================================== */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+
+    height: 76px;
+    padding: 0 max(5vw, 22px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -.5px;
+}
+
+.brand b {
+    color: var(--primary);
+}
+
+.brand-mark {
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+    background: var(--primary);
+    color: white;
+
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-btn {
+    padding: 9px 12px;
+
+    border: 1px solid var(--line);
+    border-radius: 10px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+.user-chip,
+.date-pill {
+    padding: 8px 13px;
+
+    border-radius: 30px;
+    background: var(--primary-soft);
+    color: var(--primary-dark);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   4. BOTÕES
+======================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 12px 17px;
+
+    border: 0;
+    border-radius: 11px;
+
+    font-weight: 700;
+    transition: .15s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--text);
+}
+
+.btn-small {
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   5. TELA DE AUTENTICAÇÃO
+======================================== */
+
+.auth-wrap {
+    max-width: 1100px;
+    min-height: 520px;
+
+    margin: 70px auto 50px;
+    padding: 0 24px;
+
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.welcome h1 {
+    margin: 16px 0;
+
+    font-size: clamp(38px, 5vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.welcome h1 span {
+    color: var(--primary);
+}
+
+.welcome p,
+.section-heading p,
+.page-title p {
+    max-width: 510px;
+    color: var(--muted);
+}
+
+.welcome-points {
+    display: grid;
+    gap: 12px;
+
+    margin-top: 30px;
+
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.eyebrow {
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+
+/* ========================================
+   6. PAINÉIS E CARDS
+======================================== */
+
+.panel {
+    padding: 25px;
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.access-panel {
+    padding: 32px;
+}
+
+.form-panel {
+    padding: 34px;
+}
+
+.section-heading h1,
+.section-heading h2 {
+    margin: 7px 0;
+
+    font-size: 27px;
+    letter-spacing: -.8px;
+}
+
+.section-heading p {
+    margin: 0 0 22px;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   7. OPÇÕES DE PERFIL
+======================================== */
+
+.role-options {
+    display: grid;
+    gap: 12px;
+}
+
+.role-card {
+    width: 100%;
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    border: 1px solid var(--line);
+    border-radius: 14px;
+
+    background: var(--surface-2);
+    color: var(--text);
+
+    text-align: left;
+    transition: .15s;
+}
+
+.role-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.role-icon {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+    background: var(--primary-soft);
+    color: var(--primary);
+
+    font-size: 22px;
+}
+
+.role-card b,
+.role-card small {
+    display: block;
+}
+
+.role-card small {
+    margin-top: 3px;
+
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.arrow {
+    margin-left: auto;
+
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.small-note {
+    margin: 20px 0 0;
+
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* ========================================
+   8. FORMULÁRIOS
+======================================== */
+
+.narrow-main {
+    max-width: 720px;
+
+    margin: 45px auto 70px;
+    padding: 0 20px;
+}
+
+.back-link {
+    display: inline-block;
+
+    margin: 0 0 18px;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-grid label {
+    display: grid;
+    gap: 7px;
+
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea,
+.panel-head select {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 12px;
+
+    border: 1px solid var(--line);
+    border-radius: 10px;
+
+    outline: none;
+
+    background: var(--surface-2);
+    color: var(--text);
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-actions .btn {
+    min-width: 145px;
+}
+
+
+/* ========================================
+   9. CONTEÚDO PRINCIPAL
+======================================== */
+
+.page-main {
+    max-width: 1280px;
+
+    margin: 35px auto 65px;
+    padding: 0 24px;
+}
+
+.page-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 26px;
+}
+
+.page-title h1 {
+    margin: 5px 0;
+
+    font-size: 32px;
+    letter-spacing: -1px;
+}
+
+.page-title p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   10. INDICADORES E ESTATÍSTICAS
+======================================== */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    padding: 18px 20px;
+
+    border: 1px solid var(--line);
+    border-radius: 15px;
+
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.stat-card .stat-label {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.stat-card strong {
+    display: block;
+
+    margin: 3px 0;
+
+    color: var(--text);
+    font-size: 27px;
+}
+
+.stat-card small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* ========================================
+   11. GRID DE CONTEÚDO
+======================================== */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+.panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.panel-head h2 {
+    margin: 3px 0;
+
+    font-size: 19px;
+    letter-spacing: -.4px;
+}
+
+.panel-head p {
+    margin: 4px 0 0;
+    font-size: 12px;
+}
+
+.panel-head select {
+    max-width: 210px;
+    font-size: 12px;
+}
+
+
+/* ========================================
+   12. LISTAS E AGENDAMENTOS
+======================================== */
+
+.schedule-list,
+.event-list,
+.admin-list {
+    display: grid;
+    gap: 10px;
+}
+
+.schedule-item,
+.event-item,
+.admin-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 13px 14px;
+
+    border: 1px solid var(--line);
+    border-radius: 12px;
+
+    background: var(--surface-2);
+}
+
+.time-box {
+    padding: 9px 10px;
+
+    border-radius: 10px;
+    background: var(--primary-soft);
+    color: var(--primary-dark);
+
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.item-main {
+    min-width: 0;
+    flex: 1;
+}
+
+.item-main b {
+    display: block;
+    font-size: 13px;
+}
+
+.item-main small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* ========================================
+   13. STATUS
+======================================== */
+
+.status {
+    padding: 5px 8px;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.available {
+    background: #e3f5e9;
+    color: #187345;
+}
+
+.unavailable {
+    background: #fae8e8;
+    color: #a33c3c;
+}
+
+[data-theme="dark"] .available {
+    background: #234532;
+    color: #8fe0ae;
+}
+
+[data-theme="dark"] .unavailable {
+    background: #512d2d;
+    color: #ffaaaa;
+}
+
+.status-live {
+    padding: 8px 12px;
+
+    border-radius: 30px;
+    background: var(--primary-soft);
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   14. EVENTOS
+======================================== */
+
+.event-date {
+    width: 48px;
+    min-width: 48px;
+    padding: 7px 3px;
+
+    border-radius: 10px;
+    background: var(--primary-soft);
+    color: var(--primary-dark);
+
+    text-align: center;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.event-date strong {
+    display: block;
+    font-size: 19px;
+}
+
+.panel-icon {
+    color: var(--primary);
+    font-size: 23px;
+}
+
+
+/* ========================================
+   15. MAPAS
+======================================== */
+
+.map-panel {
+    margin-top: 18px;
+}
+
+.map-box {
+    height: 360px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--line);
+    border-radius: 13px;
+
+    background: var(--surface-2);
+    z-index: 1;
+}
+
+.map-legend {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 12px;
+
+    font-size: 11px;
+}
+
+.map-legend i {
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    margin-right: 6px;
+
+    border-radius: 3px;
+    background: #dc6666;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    background: var(--surface);
+    color: var(--text);
+}
+
+.leaflet-container {
+    font-family: inherit;
+}
+
+.leaflet-control-attribution {
+    font-size: 9px !important;
+}
+
+
+/* ========================================
+   16. ABAS
+======================================== */
+
+.tabs {
+    display: flex;
+    gap: 7px;
+
+    overflow-x: auto;
+
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.tab {
+    padding: 10px 14px;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: transparent;
+    color: var(--muted);
+
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.tab.active {
+    background: var(--primary-soft);
+    color: var(--primary-dark);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+/* ========================================
+   17. AÇÕES RÁPIDAS
+======================================== */
+
+.quick-actions {
+    display: grid;
+    gap: 9px;
+}
+
+.quick-action {
+    padding: 13px;
+
+    border: 1px solid var(--line);
+    border-radius: 10px;
+
+    background: var(--surface-2);
+    color: var(--text);
+
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.quick-action:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+
+/* ========================================
+   18. ADMINISTRAÇÃO E ESTADOS VAZIOS
+======================================== */
+
+.admin-item {
+    align-items: flex-start;
+}
+
+.admin-item .item-main {
+    padding-top: 2px;
+}
+
+.delete-btn {
+    padding: 6px 9px;
+
+    border: 1px solid var(--line);
+    border-radius: 8px;
+
+    background: var(--surface);
+    color: var(--danger);
+
+    font-size: 11px;
+}
+
+.empty-state {
+    padding: 22px;
+
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+
+    color: var(--muted);
+
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* ========================================
+   19. RODAPÉ
+======================================== */
+
+.site-footer {
+    padding: 25px;
+
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* ========================================
+   20. RESPONSIVIDADE - TABLETS
+======================================== */
+
+@media (max-width: 850px) {
+
+    .auth-wrap {
+        grid-template-columns: 1fr;
+        gap: 25px;
+
+        margin-top: 35px;
+    }
+
+    .welcome h1 {
+        font-size: 42px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-title {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .page-title h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* ========================================
+   21. RESPONSIVIDADE - CELULARES
+======================================== */
+
+@media (max-width: 560px) {
+
+    .topbar {
+        height: 65px;
+        padding: 0 14px;
+    }
+
+    .brand {
+        font-size: 16px;
+    }
+
+    .brand-mark {
+        width: 32px;
+        height: 32px;
+    }
+
+    .theme-label {
+        display: none;
+    }
+
+    .top-actions {
+        gap: 6px;
+    }
+
+    .user-chip {
+        display: none;
+    }
+
+    .page-main {
+        margin-top: 25px;
+        padding: 0 13px;
+    }
+
+    .panel {
+        padding: 17px;
+    }
+
+    .form-panel,
+    .access-panel {
+        padding: 22px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .stats-grid {
+        gap: 9px;
+    }
+
+    .stat-card {
+        padding: 13px;
+    }
+
+    .stat-card strong {
+        font-size: 23px;
+    }
+
+    .panel-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .panel-head select {
+        max-width: none;
+    }
+
+    .schedule-item {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .schedule-item .status {
+        margin-left: auto;
+    }
+
+    .map-box {
+        height: 300px;
+    }
+
+    .auth-wrap {
+        padding: 0 14px;
+    }
+
+    .welcome h1 {
+        font-size: 38px;
+    }
+
+    .form-actions {
+        flex-wrap: wrap;
+    }
+
+    .form-actions .btn {
+        flex: 1;
+    }
+
+    .status-live {
+        font-size: 10px;
+    }
+}

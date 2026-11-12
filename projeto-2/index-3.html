@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Consultas</title>
+    <link rel="stylesheet" href="style-3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+<div class="container">
+
+
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span>✓</span> Vitalis
+        </div>
+
+        <p class="menu-title">MENU PRINCIPAL</p>
+
+        <nav>
+            <a href="#"> <i class="fa-solid fa-house"></i> Início</a>
+            <a href="#" class="active"><i class="fa-regular fa-calendar"></i> Minha agenda</a>
+            <a href="#"><i class="fa-regular fa-hospital" style="color: rgb(18, 18, 18);"></i> Unidades de saúde</a>
+            <a href="#"> <i class="fa-regular fa-map"></i> Mapa  cidade</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#">â &nbsp; Configurações</a>
+            <a href="#">Sair da conta</a>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="content">
+
+        <header>
+            <div>
+                <small>ÁREA DO PACIENTE</small>
+                <h1>Seu agendamento, sua saúde</h1>
+                <p>Escolha a data e o horÁrio para sua próxima consulta.</p>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">P</div>
+                <div>
+                    <strong>Paciente</strong>
+                    <small>Minha conta</small>
+                </div>
+            </div>
+        </header>
+
+        <div class="booking">
+
+            <!-- CALENDÁRIO -->
+            <section class="calendar-section">
+                <h3>Escolha uma data</h3>
+                <p class="description">Selecione o melhor dia para sua consulta.</p>
+
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button>‹</button>
+                        <strong>Novembro 2026</strong>
+                        <button>‹</button>
+                    </div>
+
+                    <div class="days">
+                        <span>DOM</span>
+                        <span>SEG</span>
+                        <span>TER</span>
+                        <span>QUA</span>
+                        <span>QUI</span>
+                        <span>SEX</span>
+                        <span>SÁB</span>
+                    </div>
+
+                    <div class="dates">
+                        <span class="muted">1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                        <span>6</span>
+                        <span>7</span>
+
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                        <span>11</span>
+                        <span class="selected">12</span>
+                        <span>13</span>
+                        <span>14</span>
+
+                        <span>15</span>
+                        <span>16</span>
+                        <span>17</span>
+                        <span>18</span>
+                        <span>19</span>
+                        <span>20</span>
+                        <span>21</span>
+
+                        <span>22</span>
+                        <span>23</span>
+                        <span>24</span>
+                        <span>25</span>
+                        <span>26</span>
+                        <span>27</span>
+                        <span>28</span>
+
+                        <span>29</span>
+                        <span>30</span>
+                    </div>
+                </div>
+
+                <div class="legend">
+                    <span class="blue-dot"></span> Data selecionada
+                    <span class="gray-dot"></span> DisponÍvel
+                </div>
+            </section>
+
+            <!-- INFORMAÇõES DA CONSULTA -->
+            <section class="details">
+
+                <h3>Quinta-feira, 12 de novembro</h3>
+                <p class="description">Confira os horÁrios disponíveis para atendimento.</p>
+
+                <div class="info-grid">
+                    <div>
+                        <small>Especialidade</small>
+                        <strong>Clínica Geral</strong>
+                    </div>
+
+                    <div>
+                        <small>Tipo de consulta</small>
+                        <strong>Presencial</strong>
+                    </div>
+                </div>
+
+                <h3 class="time-title">Horãrios disponíveis</h3>
+                <p class="description">Selecione um horÁrio para continuar.</p>
+
+                <div class="period">
+                    <span>☀ Manhã</span>
+                    <span>◷ Tarde</span>
+                </div>
+
+                <div class="times">
+                    <button>08:00</button>
+                    <button>08:30</button>
+                    <button>09:00</button>
+                    <button>09:30</button>
+                    <button>10:00</button>
+                    <button>10:30</button>
+                </div>
+
+                <h3 class="time-title">Local de atendimento</h3>
+
+                <div class="location">
+                    <div class="location-icon">⌖</div>
+                    <div>
+                        <strong>UBS - Unidade BÁsica de Saúde</strong>
+                        <p>Endereço da unidade de atendimento</p>
+                    </div>
+                </div>
+
+                <div class="confirmation">
+                    <p>Confira os dados antes de confirmar seu agendamento.</p>
+                    <button class="confirm">Confirmar agendamento →</button>
+                </div>
+
+            </section>
+        </div>
+
+    </main>
+</div>
+
+<script src="agendamento.js"></script>
+</body>
+</html>

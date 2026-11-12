@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitalis - Unidades de Saúde</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span class="logo-icon">✚</span>
+            <span>Vitalis<span class="blue">.core</span></span>
+        </div>
+
+        <p class="menu-title">ÁREA DO CIDADÃO</p>
+
+        <nav>
+            <a href="#"><i class="fa-solid fa-house" style="color: rgb(18, 18, 18);"></i><span>Início</span></a>
+            <a href="#"><i class="fa-regular fa-calendar-days" style="color: rgb(18, 18, 18);"></i> <span>Minha agenda</span></a>
+            <a href="#" class="active"><i class="fa-regular fa-hospital"></i> <span>Unidades de saúde</span></a>
+            <a href="#"><i class="fa-regular fa-map"></i> <span>Mapa da cidade</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <button class="bt">
+            <p>Conta com a gente</p>
+            <small>Seu atendimento, sua saúde.</small>
+           </button>
+
+
+            <button class="bt"><a href="#">Sair da conta</a></button>
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <span>Portal de atendimento</span>
+
+            <div class="user">
+                <span><i class="fa-solid fa-user" style="color: rgb(18, 18, 18);"></i></span>
+                <div>
+                    <strong>Mariana Oliveira</strong>
+                    <small>Cidadã · Online</small>
+                </div>
+            </div>
+        </header>
+
+
+        <section class="content">
+
+            <div class="heading">
+                <div>
+                    <h1>Uma rede perto de você</h1>
+                    <p>Consulte endereços, serviços e horários antes de sair de casa.</p>
+                </div>
+
+                <button class="map-button">Ver no mapa →</button>
+            </div>
+
+
+            <div class="filters">
+                <button>Todas as regiões⌄</button>
+            </div>
+
+
+            <!-- CARTÕES DAS UBS -->
+            <div class="ubs-grid">
+
+                <div class="ubs-card">
+                    <h2>UBS Vila Operaria</h2>
+                    <span class="status">Aberta · Segunda a sexta</span>
+                    <p>Av. Silvestre Dresch, 258 </p>
+                    <p>07:30 às 17:00</p>
+                    <p>Clínica geral </p>
+                    <p>☎ (44) 99935-1084</p>
+                    <a href="#">Ver unidade no mapa →</a>
+                </div>
+
+
+                <div class="ubs-card">
+                    <h2>UBS Jardim do Sol</h2>
+                    <span class="status">Aberta · Segunda a sexta</span>
+                    <p>R. Belo Horizonte, 1370 </p>
+                    <p>07:30 às 16:00</p>
+                    <p>Clínica geral</p>
+                    <p>☎ (44) 0000-0000</p>
+                    <a href="#">Ver unidade no mapa →</a>
+                </div>
+
+
+                <div class="ubs-card">
+                    <h2>Ubs 50 casas</h2>
+                    <span class="closed">Horário alterado</span>
+                    <p>R. Belo Horizonte, 103 </p>
+                    <p>Segunda a sexta: 08:00 às 17:00</p>
+                    <p> Clínica geral</p>
+                    <p>☎ (44) 3000-0003</p>
+                    <a href="#">Ver unidade no mapa →</a>
+                </div>
+
+
+                <div class="ubs-card">
+                    <h2>UBS Norte</h2>
+                    <span class="status">Aberta · Segunda a sexta</span>
+                    <p>Av. Central, 200 - Norte</p>
+                    <p>07:00 às 17:00</p>
+                    <p>Clínica geral · Enfermagem</p>
+                    <p>☎ (44) 3000-0004</p>
+                    <a href="#">Ver unidade no mapa →</a>
+                </div>
+
+
+                <div class="ubs-card">
+                    <h2>UBS Leste</h2>
+                    <span class="status">Aberta · Segunda a sexta</span>
+                    <p>Rua do Parque, 90 - Leste</p>
+                    <p>08:00 às 17:00</p>
+                    <p>Pediatria · Enfermagem</p>
+                    <p>☎ (44) 3000-0005</p>
+                    <a href="#">Ver unidade no mapa →</a>
+                </div>
+
+
+                <div class="ubs-card">
+                    <h2>UBS Oeste</h2>
+                    <span class="status">Aberta · Segunda a sexta</span>
+                    <p>Rua das Acácias, 210 - Oeste</p>
+                    <p>07:00 às 17:00</p>
+                    <p>Clínica geral · Odontologia</p>
+                    <p>☎ (44) 3000-0006</p>
+                    <a href="#">Ver unidade no mapa →</a>
+                </div>
+
+            </div>
+
+            <footer>
+                <p>Portal de informações sobre unidades de saúde.</p>
+                <small>Vitalis Care · Sistema de atendimento</small>
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
+

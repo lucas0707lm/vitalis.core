@@ -1,0 +1,207 @@
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalisCare - Cadastros</title>
+    <link rel="stylesheet" href="style-2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo">
+           <span class="logo-icon">✚</span>
+            <span>Vitalis<span class="blue">.core</span></span>
+        </div>
+
+        <p class="menu-title">ÁREA ADMINISTRATIVA</p>
+
+        <nav class="menu">
+            <a href="#"><i class="fa-solid fa-bars" style="color: rgb(18, 18, 18);"></i> Visão geral</a>
+            <a href="#" class="active"><i class="fa-solid fa-folder"></i> Cadastros</a>
+            <a href="#"><i class="fa-regular fa-calendar-days"></i>Consultas</a>
+            <a href="#"><i class="fa-regular fa-hospital"></i> Unidades</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <strong>Conte com a gente</strong>
+            <p>Ouvidoria SUS - 136</p>
+            <a href="#">Sair da conta</a>
+        </div>
+
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main">
+
+        <!-- CABEÇALHO -->
+        <header class="topbar">
+            <span>Painel de gestão</span>
+
+            <div class="user">
+                <span class="notification"><i class="fa-solid fa-user" style="color: rgb(18, 18, 18);"></i></span>
+                <div>
+                    <strong>Camila Rocha</strong>
+                    <small>Coordenadora de Saúde</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- TÍTULO -->
+        <section class="welcome">
+
+            <div>
+                <h1>Gestão organizada, cuidado melhor</h1>
+                <p>Cadastre e mantenha as informa&ccedil;&otilde;es da rede sempre atualizadas.</p>
+            </div>
+
+            <button class="new-button">+ Novo cadastro</button>
+
+        </section>
+
+        <!-- ESTATÍSTICAS -->
+        <section class="stats">
+
+            <div class="stat">
+                <h2>06</h2>
+                <p>Unidades de saúde</p>
+            </div>
+
+            <div class="stat">
+                <h2>32</h2>
+                <p>Profissionais ativos</p>
+            </div>
+
+            <div class="stat">
+                <h2>08</h2>
+                <p>Especialidades</p>
+            </div>
+
+            <div class="stat">
+                <h2>48</h2>
+                <p>Itens cadastrados</p>
+            </div>
+
+        </section>
+
+        <!-- CENTRAL DE CADASTROS -->
+        <section class="register-section">
+
+            <div class="section-heading">
+                <h2>Central de cadastros</h2>
+                <p>Selecione um registro para editar ou excluir qualquer informação.</p>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Registro</th>
+                            <th>Atualiza&ccedil;&atilde;o</th>
+                            <th>Situa&ccedil;&atilde;o</th>
+                            <th colspan="2">A&ccedil;&otilde;es</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Unidades</td>
+                            <td>UBS Centro</td>
+                            <td>12 nov. 2026</td>
+                            <td><span class="status active-status">Ativo</span></td>
+                            <td><button class="edit">Editar</button></td>
+                            <td><button class="delete">Excluir</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Profissionais</td>
+                            <td>Dra. Ana Ribeiro - CRM 12345</td>
+                            <td>10 nov. 2026</td>
+                            <td><span class="status active-status">Ativo</span></td>
+                            <td><button class="edit">Editar</button></td>
+                            <td><button class="delete">Excluir</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Especialidades</td>
+                            <td>Clínica geral</td>
+                            <td>08 nov. 2026</td>
+                            <td><span class="status active-status">Ativo</span></td>
+                            <td><button class="edit">Editar</button></td>
+                            <td><button class="delete">Excluir</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Hor&aacute;rios e turnos</td>
+                            <td>Centro - 13 nov. - 8h às 17h</td>
+                            <td>07 nov. 2026</td>
+                            <td><span class="status pending">Pendente</span></td>
+                            <td><button class="edit">Editar</button></td>
+                            <td><button class="delete">Excluir</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Avisos</td>
+                            <td>Vila Nova - novo hor&aacute;rio</td>
+                            <td>06 nov. 2026</td>
+                            <td><span class="status pending">Pendente</span></td>
+                            <td><button class="edit">Editar</button></td>
+                            <td><button class="delete">Excluir</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Farm&aacute;cia</td>
+                            <td>05 nov. - Programa de saúde</td>
+                            <td>05 nov. 2026</td>
+                            <td><span class="status pending">Pendente</span></td>
+                            <td><button class="edit">Editar</button></td>
+                            <td><button class="delete">Excluir</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Consultas</td>
+                            <td>Mariana Oliveira - 12 nov. - 09:50</td>
+                            <td>04 nov. 2026</td>
+                            <td><span class="status scheduled">Agendada</span></td>
+                            <td><button class="edit">Editar</button></td>
+                            <td><button class="delete">Excluir</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Produtos</td>
+                            <td>Luvas de procedimento - 240 caixas</td>
+                            <td>03 nov. 2026</td>
+                            <td><span class="status stock">Em estoque</span></td>
+                            <td><button class="edit">Editar</button></td>
+                            <td><button class="delete">Excluir</button></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p>VitalisCare © 2026 — Sistema de Gestão em Saúde</p>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="cadastros.js"></script>
+</body>
+</html>

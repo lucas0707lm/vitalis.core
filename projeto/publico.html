@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Área pública | Saúde em Fila</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+    <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">+</span><span>Saúde <b>em
+                    Fila</b></span></a>
+        <div class="top-actions"><span class="user-chip" id="user-greeting">Olá!</span><button class="icon-btn"
+                data-theme-toggle>◐ <span class="theme-label">Modo escuro</span></button><a
+                class="btn btn-outline btn-small" href="index.html">Sair</a></div>
+    </header>
+    <main class="page-main">
+        <section class="page-title">
+            <div><span class="eyebrow">ÁREA DO CIDADÃO</span>
+                <h1>Olá, <span id="public-name">visitante</span> 👋</h1>
+                <p>Confira os atendimentos e as informações das unidades de saúde.</p>
+            </div>
+            <div class="date-pill" id="today-label"></div>
+        </section>
+        <section class="stats-grid" id="public-stats"></section>
+        <div class="content-grid">
+            <section class="panel">
+                <div class="panel-head">
+                    <div><span class="eyebrow">PROGRAMAÇÃO</span>
+                        <h2>Horários de atendimento</h2>
+                    </div><select id="public-unit-filter" aria-label="Filtrar por unidade">
+                        <option value="">Todas as unidades</option>
+                    </select>
+                </div>
+                <div id="schedule-list" class="schedule-list"></div>
+            </section>
+            <aside class="panel agenda-panel">
+                <div class="panel-head">
+                    <div><span class="eyebrow">FIQUE POR DENTRO</span>
+                        <h2>Agenda e avisos</h2>
+                    </div><span class="panel-icon">▦</span>
+                </div>
+                <div id="public-events" class="event-list"></div>
+            </aside>
+        </div>
+        <section class="panel map-panel">
+            <div class="panel-head">
+                <div><span class="eyebrow">INFORMAÇÃO TERRITORIAL</span>
+                    <h2>Mapa de áreas com restrição</h2>
+                    <p class="muted">Selecione uma área destacada para consultar o motivo do isolamento.</p>
+                </div>
+            </div>
+            <div id="public-map" class="map-box"></div>
+            <div id="map-legend" class="map-legend"><span><i></i> Área com restrição</span><span class="muted">Os
+                    limites exibidos são ilustrativos.</span></div>
+        </section>
+    </main>
+    <footer class="site-footer">Vitaliscore · Informações demonstrativas. Em caso de dúvida, procure sua unidade de
+        saúde.</footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/public.js"></script>
+</body>
+
+</html>

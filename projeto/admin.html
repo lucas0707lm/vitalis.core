@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Administrativo | Vitaliscore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+    <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">+</span><span>Saúde <b>em
+                    Fila</b></span></a>
+        <div class="top-actions"><span class="user-chip" id="admin-greeting">Administrativo</span><button
+                class="icon-btn" data-theme-toggle>◐ <span class="theme-label">Modo escuro</span></button><a
+                class="btn btn-outline btn-small" href="index.html">Sair</a></div>
+    </header>
+    <main class="page-main">
+        <section class="page-title">
+            <div><span class="eyebrow">PAINEL DE CONTROLE</span>
+                <h1>Administração</h1>
+                <p>Gerencie a programação e as informações exibidas à população.</p>
+            </div><span class="status-live">● Dados salvos neste navegador</span>
+        </section>
+        <nav class="tabs" aria-label="Seções administrativas"><button class="tab active" data-tab="visao">Visão
+                geral</button><button class="tab" data-tab="atendimentos">Atendimentos</button><button class="tab"
+                data-tab="cadastros">Médicos e unidades</button><button class="tab" data-tab="agenda">Agenda e
+                avisos</button><button class="tab" data-tab="mapa">Mapa e regiões</button></nav>
+        <section class="tab-content active" id="tab-visao">
+            <div class="stats-grid" id="admin-stats"></div>
+            <div class="content-grid">
+                <div class="panel">
+                    <div class="panel-head">
+                        <div><span class="eyebrow">RESUMO</span>
+                            <h2>Configuração do dia</h2>
+                        </div>
+                    </div>
+                    <div id="admin-summary"></div>
+                </div>
+                <div class="panel">
+                    <div class="panel-head">
+                        <div><span class="eyebrow">ATALHOS</span>
+                            <h2>Ações rápidas</h2>
+                        </div>
+                    </div>
+                    <div class="quick-actions"><button class="quick-action" data-goto="atendimentos">＋ Configurar
+                            atendimentos</button><button class="quick-action" data-goto="cadastros">＋ Cadastrar médico
+                            ou unidade</button><button class="quick-action" data-goto="agenda">＋ Publicar aviso ou
+                            evento</button><button class="quick-action" data-goto="mapa">＋ Cadastrar área
+                            restrita</button></div>
+                </div>
+            </div>
+        </section>
+        <section class="tab-content" id="tab-atendimentos">
+            <div class="content-grid">
+                <div class="panel">
+                    <div class="panel-head">
+                        <div><span class="eyebrow">FICHAS DO DIA</span>
+                            <h2>Configurar atendimento</h2>
+                        </div>
+                    </div>
+                    <form id="config-form" class="form-grid"><label>Data<input type="date" name="date"
+                                required></label><label>Unidade<select name="unitId" id="config-unit"
+                                required></select></label><label>Quantidade de fichas<input type="number" name="tickets"
+                                min="0" max="1000" value="30" required></label><label>Início<input type="time"
+                                name="start" value="07:00" required></label><label>Fim<input type="time" name="end"
+                                value="17:00" required></label><label>Médico responsável<select name="doctorId"
+                                id="config-doctor" required></select></label><label class="full">Status<select
+                                name="status">
+                                <option value="Disponível">Disponível</option>
+                                <option value="Indisponível">Indisponível</option>
+                            </select></label>
+                        <div class="form-actions full"><button class="btn btn-primary">Salvar atendimento</button></div>
+                    </form>
+                </div>
+                <div class="panel">
+                    <div class="panel-head">
+                        <div><span class="eyebrow">PROGRAMAÇÃO</span>
+                            <h2>Atendimentos cadastrados</h2>
+                        </div>
+                    </div>
+                    <div id="admin-schedules" class="admin-list"></div>
+                </div>
+            </div>
+        </section>
+        <section class="tab-content" id="tab-cadastros">
+            <div class="content-grid">
+                <div class="panel">
+                    <div class="panel-head">
+                        <div><span class="eyebrow">EQUIPE</span>
+                            <h2>Cadastrar médico</h2>
+                        </div>
+                    </div>
+                    <form id="doctor-form" class="form-grid"><label class="full">Nome do médico<input name="name"
+                                required placeholder="Ex.: Dra. Ana Souza"></label><label>Especialidade<input
+                                name="specialty" required placeholder="Clínico geral"></label><label>Unidade<select
+                                name="unitId" id="doctor-unit" required></select></label>
+                        <div class="form-actions full"><button class="btn btn-primary">Adicionar médico</button></div>
+                    </form>
+                    <div id="doctor-list" class="admin-list"></div>
+                </div>
+                <div class="panel">
+                    <div class="panel-head">
+                        <div><span class="eyebrow">LOCAIS</span>
+                            <h2>Cadastrar unidade</h2>
+                        </div>
+                    </div>
+                    <form id="unit-form" class="form-grid"><label class="full">Nome da unidade<input name="name"
+                                required placeholder="Ex.: UBS Central"></label><label class="full">Endereço ou
+                            bairro<input name="address" required placeholder="Rua, número ou bairro"></label>
+                        <div class="form-actions full"><button class="btn btn-primary">Adicionar unidade</button></div>
+                    </form>
+                    <div id="unit-list" class="admin-list"></div>
+                </div>
+            </div>
+        </section>
+        <section class="tab-content" id="tab-agenda">
+            <div class="content-grid">
+                <div class="panel">
+                    <div class="panel-head">
+                        <div><span class="eyebrow">CALENDÁRIO PÚBLICO</span>
+                            <h2>Novo evento ou aviso</h2>
+                        </div>
+                    </div>
+                    <form id="event-form" class="form-grid"><label>Título<input name="title" required
+                                placeholder="Ex.: Vacinação contra gripe"></label><label>Data<input type="date"
+                                name="date" required></label><label class="full">Descrição<textarea name="description"
+                                rows="3" required
+                                placeholder="Informações que serão exibidas à população"></textarea></label><label>Categoria<select
+                                name="type">
+                                <option value="Evento">Evento</option>
+                                <option value="Aviso">Aviso</option>
+                                <option value="Fechamento">Fechamento</option>
+                            </select></label><label>Unidade (opcional)<select name="unitId" id="event-unit">
+                                <option value="">Todas as unidades</option>
+                            </select></label>
+                        <div class="form-actions full"><button class="btn btn-primary">Publicar na agenda</button></div>
+                    </form>
+                </div>
+                <div class="panel">
+                    <div class="panel-head">
+                        <div><span class="eyebrow">PUBLICAÇÕES</span>
+                            <h2>Agenda cadastrada</h2>
+                        </div>
+                    </div>
+                    <div id="event-list" class="admin-list"></div>
+                </div>
+            </div>
+        </section>
+        <section class="tab-content" id="tab-mapa">
+            <div class="content-grid">
+                <div class="panel">
+                    <div class="panel-head">
+                        <div><span class="eyebrow">MAPA INTERATIVO</span>
+                            <h2>Cadastrar área com restrição</h2>
+                        </div>
+                    </div>
+                    <p class="muted">Clique no mapa para marcar os pontos do contorno da área. Marque pelo menos 3
+                        pontos e salve.</p>
+                    <form id="zone-form" class="form-grid"><label class="full">Nome da região<input name="name" required
+                                placeholder="Ex.: Região do Jardim Primavera"></label><label class="full">Motivo da
+                            restrição<textarea name="reason" rows="3" required
+                                placeholder="Explique o motivo da restrição"></textarea></label>
+                        <div class="form-actions full"><button type="button" class="btn btn-outline"
+                                id="clear-zone">Limpar pontos</button><button class="btn btn-primary">Salvar
+                                região</button></div>
+                    </form>
+                    <p class="small-note" id="zone-points">Nenhum ponto marcado.</p>
+                </div>
+                <div class="panel">
+                    <div class="panel-head">
+                        <div><span class="eyebrow">LOCALIZAÇÃO</span>
+                            <h2>Marque no mapa</h2>
+                        </div>
+                    </div>
+                    <div id="admin-map" class="map-box"></div>
+                    <div id="zone-list" class="admin-list"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">Vitaliscore · Painel administrativo demonstrativo</footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

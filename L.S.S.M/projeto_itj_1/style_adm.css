@@ -1,0 +1,136 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #eef4f5;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 750px;
+    margin: auto;
+}
+
+header {
+    background: #087f75;
+    color: white;
+    padding: 25px;
+    border-radius: 12px 12px 0 0;
+}
+
+header h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+main {
+    background: white;
+    padding: 30px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 5px 20px #00000010;
+}
+
+h2 {
+    color: #087f75;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #087f75;
+    font-size: 17px;
+    margin: 25px 0 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 17px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #333;
+}
+
+input, select {
+    padding: 13px;
+    border: 1px solid #d5dfe0;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+input:focus, select:focus {
+    border-color: #087f75;
+    box-shadow: 0 0 0 2px #087f7520;
+}
+
+.linha {
+    display: flex;
+    gap: 15px;
+}
+
+.botoes {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+button {
+    background: #087f75;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    flex: 2;
+}
+
+button:hover {
+    background: #06665e;
+}
+
+.limpar {
+    background: #e5eeee;
+    color: #333;
+    flex: 1;
+}
+
+.limpar:hover {
+    background: #d5e2e2;
+}
+
+footer {
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+    padding: 20px;
+}
+
+@media (max-width: 550px) {
+    main {
+        padding: 20px;
+    }
+
+    .linha {
+        flex-direction: column;
+        gap: 0;
+    }
+}

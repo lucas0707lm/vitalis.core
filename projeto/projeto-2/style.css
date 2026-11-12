@@ -1,0 +1,344 @@
+
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #263348;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* MENU LATERAL */
+.sidebar {
+    width: 240px;
+    background: #ffffff;
+    padding: 30px 22px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #edf0f5;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 55px;
+}
+
+.logo-icon {
+    background: #1765df;
+    color: white;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+}
+
+.blue {
+    color: #2674e8;
+}
+
+.menu-title {
+    font-size: 10px;
+    color: #929cab;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: #778397;
+    padding: 13px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: flex;
+    gap: 12px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #edf4ff;
+    color: #1765df;
+}
+.bt{
+        background: #f6f7fa;
+        color: rgb(25, 9, 243);
+        border: none;
+        padding: 5px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding-top: 35px;
+    font-size: 12px;
+}
+
+.sidebar-bottom p {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.sidebar-bottom small {
+    color: #929cab;
+}
+
+.sidebar-bottom a {
+    display: block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #354256;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+.main-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.topbar {
+    height: 80px;
+    background: white;
+    padding: 0 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #edf0f5;
+    color: #647188;
+    font-size: 13px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user > span {
+    font-size: 23px;
+    color: #1765df;
+}
+
+.user strong,
+.user small {
+    display: block;
+}
+
+.user strong {
+    color: #263348;
+    font-size: 12px;
+}
+
+.user small {
+    color: #929cab;
+    margin-top: 5px;
+}
+
+
+/* ÁREA CENTRAL */
+.content {
+    padding: 55px 45px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.heading h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.heading p {
+    color: #929cab;
+    font-size: 14px;
+}
+
+.map-button {
+    background: #1765df;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.map-button:hover {
+    background: #0d4fb8;
+}
+
+
+/* FILTROS */
+.filters {
+    margin: 35px 0 20px;
+}
+
+.filters button {
+    background: transparent;
+    border: none;
+    color: #1765df;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+
+/* CARTÕES UBS */
+.ubs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.ubs-card {
+    background: white;
+    border: 1px solid #edf0f5;
+    border-radius: 12px;
+    padding: 23px;
+    transition: 0.3s;
+}
+
+.ubs-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(30, 60, 100, 0.08);
+}
+
+.ubs-card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.status,
+.closed {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 18px;
+}
+
+.status {
+    color: #269b72;
+}
+
+.closed {
+    color: #df7777;
+}
+
+.ubs-card p {
+    font-size: 12px;
+    color: #7e899a;
+    margin-bottom: 11px;
+}
+
+.ubs-card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #1765df;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.ubs-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* RODAPÉ */
+footer {
+    margin-top: 40px;
+    color: #929cab;
+    font-size: 12px;
+}
+
+footer small {
+    display: block;
+    margin-top: 15px;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 1000px) {
+    .ubs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content {
+        padding: 35px 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        width: 75px;
+        padding: 20px 10px;
+    }
+
+    .logo {
+        font-size: 0;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .menu-title,
+    .sidebar nav a span,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .sidebar nav a {
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .heading h1 {
+        font-size: 23px;
+    }
+
+    .ubs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        padding: 30px 15px;
+    }
+
+    
+}

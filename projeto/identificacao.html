@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Identificação | Vitaliscore</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">+</span><span>Saúde <b>em
+                    Fila</b></span></a>
+        <div class="top-actions"><button class="icon-btn" data-theme-toggle>◐ <span class="theme-label">Modo
+                    escuro</span></button></div>
+    </header>
+    <main class="narrow-main"><a class="back-link" href="index.html">← Voltar ao início</a>
+        <section class="panel form-panel">
+            <div class="section-heading"><span class="eyebrow">QUASE LÁ</span>
+                <h1>Identifique-se</h1>
+                <p>Preencha os dados abaixo para acessar o sistema.</p>
+            </div>
+            <form id="identity-form" class="form-grid">
+                <label class="full">Nome completo<input name="nome" required maxlength="80"
+                        placeholder="Como podemos chamar você?"></label>
+                <label>Documento de identificação<input name="documento" required maxlength="24"
+                        placeholder="Ex.: matrícula ou documento fictício"></label>
+                <label>Unidade de referência<select name="unidade" id="identity-unit">
+                        <option value="">Não tenho preferência</option>
+                    </select></label>
+                <div class="form-actions full"><button class="btn btn-primary" type="submit">Continuar
+                        <span>→</span></button></div>
+            </form>
+            <p class="small-note">Use informações fictícias nesta demonstração. A identificação não é uma autenticação
+                segura.</p>
+        </section>
+    </main>
+    <footer class="site-footer">Vitaliscore · Projeto acadêmico demonstrativo</footer>
+    <script src="js/storage.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
